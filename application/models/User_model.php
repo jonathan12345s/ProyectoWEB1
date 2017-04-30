@@ -6,7 +6,17 @@ class User_model extends CI_Model {
     $query = $this->db->get_where('usuario',
       array('nombre' => $email, 'contrasena' => $pass));
 
-	  return $query->result_array();
+	  return $query->result_object();
+  }
+
+
+
+
+
+   function save($user)
+  {
+    $r = $this->db->insert('usuario', $user);
+    return $r;
   }
 
 }
