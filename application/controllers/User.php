@@ -171,7 +171,15 @@ $editar = $this->input->post('editar');
 
 
 
+function ModificarCliente(){
 
+
+
+	 $this->load->view('user/1.php');
+
+
+
+}
 
 
 

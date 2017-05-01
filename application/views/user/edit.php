@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <table>
 
 <tr>
- <td>id: </td><td><input name="txtid" value= <?=$u->id?> type="text"/></td>
+ <td>id: </td><td><input name="txtid" value= <?=$u->id?> type="text" readonly="readonly"/></td>
  </tr>
  <tr>
  <td>Nombre: </td><td><input name="txtnombre" value= <?=$u->nombre?> type="text"/></td>

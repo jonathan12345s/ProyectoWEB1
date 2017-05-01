@@ -40,7 +40,7 @@
 
 
 <a href="<?php echo site_url('user/crearCliente') ?>">Crear clientes</a>
-<a href="<?php echo site_url('user/eliminarclientemostar') ?>">Modificar Clientes</a>
+<a href="<?php echo site_url('user/ModificarCliente') ?>">Modificar Clientes</a>
 <a href="<?php echo site_url('user/eliminarclientemostar') ?>">Eliminar Clientes</a>
 
 
