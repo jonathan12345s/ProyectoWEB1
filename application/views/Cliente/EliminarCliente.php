@@ -72,18 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>Ingrese el Nombre de cliente a Eliminar</p>
 	
     </div>
-    <form class=""   action="<?php echo site_url('User/eliminarCliente'); ?>"  method="post">
+    <form class=""  action="<?php echo site_url('User/eliminarCliente'); ?>"  method="post">
 
 
       Nombre: <input type="text" name="Nombre" value="">
       
- 
+     <button type="submit" class="button button-block"/>Eliminar</button>
 
-
-
-
-
-    <button type="submit" class="button button-block"/>Eliminar</button>
     </form>
 	</div>
 </div>
