@@ -39,9 +39,9 @@
 
 
 
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear clientes</a>
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Modificar Clientes</a>
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Eliminar Clientes</a>
+<a href="<?php echo site_url('user/crearCliente') ?>">Crear clientes</a>
+<a href="<?php echo site_url('user/eliminarclientemostar') ?>">Modificar Clientes</a>
+<a href="<?php echo site_url('user/eliminarclientemostar') ?>">Eliminar Clientes</a>
 
 
 

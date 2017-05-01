@@ -20,6 +20,13 @@ class User_model extends CI_Model {
 
   }
 
+  function savecliente($Cliente)
+  {
+    $r = $this->db->insert('Cliente ', $Cliente);
+    return $r;
+  }
+
+
 
 
  function eliminar($nombre) {
@@ -33,6 +40,19 @@ $this->db->where('nombre',$nombre);
 
 
   }
+
+ function eliminarCliente($Cliente) {
+
+    
+
+$this->db->where('nombre',$Cliente);
+    return $this->db->delete('Cliente');
+
+
+
+
+  }
+
 
 
 

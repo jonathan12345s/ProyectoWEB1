@@ -16,6 +16,54 @@ class User extends CI_Controller {
 
 
 
+
+
+
+public function crearCliente()
+	{
+		$this->load->view('Cliente/RegistrarCliente.php');
+	}
+
+		public function saveCliente() {
+		// objener valores
+    $nombre = $this->input->post('Nombre');
+		$Edad = $this->input->post('Edad');
+		$Dirrecion = $this->input->post('Dirrecion');
+				$Telefono = $this->input->post('Telefono');
+
+		
+    $Cliente = array(
+        'Nombre' => $nombre,
+        'Edad' => $Edad,
+        'Dirrecion' => $Dirrecion,
+ 			'Telefono' => $Telefono
+
+      );
+
+
+     $r = $this->User_model->savecliente($Cliente);
+
+	if($r) {
+      $this->session->set_flashdata('message','User saved');
+			redirect('User/ADMIN');
+		} else {
+      $this->session->set_flashdata('message','There was an error saving the user');
+			redirect('Cliente/RegistrarCliente');
+		}
+
+
+	
+
+		
+
+
+
+}
+
+
+
+
+
 		public function Modificar()
 	{
 		$data= $this->obtener();
@@ -42,9 +90,45 @@ class User extends CI_Controller {
 	{
 		$this->load->view('user/EliminarEmpleados.php');
 	}
+	public function eliminarclientemostar()
+	{
+		$this->load->view('Cliente/EliminarCliente.php');
+	}
 
 
 
+
+
+
+
+public function eliminarCliente(){
+
+$nombre = $this->input->post('Nombre');
+	// consultar BD<
+	$r = $this->User_model->eliminarCliente($nombre);
+
+	if(sizeof($r) > 0) {
+
+
+			echo "Datos Eliminados";
+
+				  				  	$this->load->view('user/Admin.php');
+
+				  				  }
+				  				  else{
+
+
+
+			      echo "intente Nuevamente";
+				  				  	$this->load->view('Cliente/EliminarCliente.php');
+
+				  				  }
+
+
+
+		  	
+
+		}
 
 public function eliminar(){
 
