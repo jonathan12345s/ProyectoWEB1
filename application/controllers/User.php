@@ -162,7 +162,7 @@ $editar = $this->input->post('editar');
  		$data['usuarios'] = $usuarios;
  
 
- $this->load->view('user/edit.php', $data);
+		 $this->load->view('user/edit.php', $data);
 
 
 
@@ -171,18 +171,45 @@ $editar = $this->input->post('editar');
 
 
 
+
+
+
+
+
  function editar() {
+
+
+
+
+
+
+
+$nombre = $this->input->post('txtnombre');
+
+$contrasena = $this->input->post('txtcontrasena');
+
+$tipo = $this->input->post('txtTipo');
+
+$id = $this->input->post('txtid');
+
+
+
+   $data = array(
+        'nombre' => $nombre,
+        'contrasena' => $contrasena,
+        'tipo' => $tipo,
+          'id' => $id
+ 		
+
+      );
+
  //recogemos los datos por POST
- $data['id'] = $_POST['id'];
- $data['nombre'] = $_POST['txtNombre'];
- $data['email'] = $_POST['txtEmail'];
- $data['telefono'] = $_POST['txtTelefono'];
- $data['direccion'] = $_POST['txtDireccion'];
- //cargamos el modelo y llamamos a la función update()
- $this->load->model('mantenimiento_model');
- $this->mantenimiento_model->update($data);
- //volvemos a cargar la primera vista
- $this->index();
+
+ $this->User_model->update($nombre,$contrasena ,
+$tipo ,$id );
+
+
+  	$this->load->view('user/Admin.php');
  }
 
 
@@ -300,8 +327,7 @@ public function crearEmpleado()
 	}
 	public function ADMIN()
 	{
-	
-				  				  	$this->load->view('user/Admin.php');
+		$this->load->view('user/Admin.php');
 	}
 public function ModificarEmpleado(){
 

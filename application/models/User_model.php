@@ -34,12 +34,29 @@ class User_model extends CI_Model {
 
 
   function obtenerContacto($idContacto) {
-$this->db->select('nombre, contrasena,tipo');
+$this->db->select('nombre, contrasena,tipo,id');
 $this->db->from('usuario');
 $this->db->where('id = ' . $idContacto);
 $contacto = $this->db->get();
 return $contacto->result();
 }
+
+
+
+
+
+
+function update($nombre,$contrasena ,$tipo ,$id ) {
+
+
+ $this->db->set('nombre', $nombre);
+ $this->db->set('contrasena',$contrasena);
+ $this->db->set('tipo', $tipo);
+ 
+ $this->db->where('id', $id );
+ $this->db->update('usuario');
+
+ }
 
 
 

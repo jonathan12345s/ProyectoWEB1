@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-<form name="tabla" action="<?php echo site_url('User/ModificarEmpelado'); ?>"  method="POST">
+<form name="tabla" action="<?php echo site_url('User/editar'); ?>"  method="POST">
 
 
 
@@ -84,6 +84,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <?php foreach ($usuarios as $u):?>
 
 <table>
+
+<tr>
+ <td>id: </td><td><input name="txtid" value= <?=$u->id?> type="text"/></td>
+ </tr>
  <tr>
  <td>Nombre: </td><td><input name="txtnombre" value= <?=$u->nombre?> type="text"/></td>
  </tr>
