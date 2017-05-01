@@ -76,7 +76,28 @@ $this->db->where('nombre',$Cliente);
 
   }
 
+ function ObtenerCantidadInvetrio($codigo){
+
+
+
+    
+
+$query = $this->db->get_where('producto',
+      array('codigo' => $codigo));
+
+    return $query->result_object();
+
+
+
+
+
+
+  }
+
   
+
+
+
 
 
 

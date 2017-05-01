@@ -71,8 +71,12 @@ public function actualizarProductos() {
 	
 
 		
-    
+    $canti= $this->User_model->ObtenerCantidadInvetrio($codigo);
 
+
+ 	$numero = $canti[0]->cantidad;
+
+$cantidad=$cantidad+$numero;
 
      $r = $this->User_model->actualizarProductos($codigo,$cantidad);
 
