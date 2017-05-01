@@ -143,16 +143,19 @@ $cantidad=$cantidad+$numero;
 
 		public function Modificar()
 	{
-		$data= $this->obtener();
-
-
-
-
-		 $data = array();
-  		 $data['lista'] = $this->lista;
 		
 
-		$this->load->view('user/Modificar.php',$data);
+$Nombre = $this->input->post('Nombre');
+
+
+		
+
+		$usuarios = $this->User_model->obtener($Nombre); //llamamos a la función getData() del modelo creado anteriormente.
+ 
+ 		$data['usuarios'] = $usuarios;
+ 
+ //load de vistas
+ $this->load->view('user/Modificar.php', $data); //llamada a la vista, que crearemos posteriorme
 
 
 

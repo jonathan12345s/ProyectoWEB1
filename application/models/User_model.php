@@ -14,9 +14,9 @@ class User_model extends CI_Model {
 
  function obtener($nombre) {
 
-    $query = $this->db->get_where('usuario',array('nombre'));
+    $query = $this->db->get_where('usuario',  array('nombre' => $nombre));
 
-	  return $query->result_array();
+	  return $query->result();
 
   }
 

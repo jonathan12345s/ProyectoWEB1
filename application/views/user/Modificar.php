@@ -72,36 +72,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>Please fill all the information below to create a new user</p>
 	
     </div>
-    <form class=""   action="<?php echo site_url('User/save'); ?>"  method="post">
 
 
 
+<form name="tabla" action="" method="POST">
+ <table border="solid">
+ <thead>
+ <tr>
+ <th></th>
+ <th>nombre</th>
+ <th>contraseña</th>
+ <th>tipo</th>
 
+ </tr>
+ </thead>
+ <tbody>
+ <?php foreach ($usuarios as $u):?>
+ 
+ <tr>
+ <td><input type="radio" name="editar" value="<?=$u->id?>"/></td>
+ <td><?=$u->nombre?></td>
+ <td><?=$u->contrasena?></td>
+ <td><?=$u->tipo?></td>
 
-
-
-      
-        
-               
- Nombre: <input type="text" name="Nombre" value="">
-      
-      contrasena: <input type="text" name="contraseña" value="">
-
-      <br>
-			<LABEL>Tipo Usuario</LABEL>
-
-<ul>
-         <?php foreach ($lista as $item): ?>
-            <li> <?php echo $item['nombre'] ?> </li>
-         <?php endforeach; ?>
-      </ul>
-
-
-
-
-
-    <button type="submit" class="button button-block"/>Iniciar</button>
-    </form>
+ </tr>
+ 
+ <?php endforeach;?>
+ </tbody>
+ </table>
+ <input type="submit" value="Editar" />
+ </form>
 	</div>
 </div>
 
