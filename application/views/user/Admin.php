@@ -29,7 +29,39 @@
           <h1>Bienvenido!</h1>
           
      <p>Pagina principal de administrador</p>
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Link</a>
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear Empleados</a>
+<a href="<?php echo site_url('user/ModificarEmpleado') ?>">Modificar Empleados</a>
+<a href="<?php echo site_url('user/eliminarmostar') ?>">Eliminar Empleados</a>
+
+
+
+
+
+
+
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear clientes</a>
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Modificar Clientes</a>
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Eliminar Clientes</a>
+
+
+
+
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear clientes</a>
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Modificar Clientes</a>
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Eliminar Clientes</a>
+
+
+
+
+<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear Producto</a>
+
+<a href="<?php echo site_url('user/crearEmpleado') ?>">agregar Productos</a>
+
+
+
+
+<a href="<?php echo site_url('user/crearEmpleado') ?>">ver Reportes</a>
+
 
 
 

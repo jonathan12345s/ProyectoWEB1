@@ -12,6 +12,35 @@ class User_model extends CI_Model {
 
 
 
+ function obtener($nombre) {
+
+    $query = $this->db->get_where('usuario',array('nombre'));
+
+	  return $query->result_array();
+
+  }
+
+
+
+ function eliminar($nombre) {
+
+    
+
+$this->db->where('nombre',$nombre);
+    return $this->db->delete('usuario');
+
+
+
+
+  }
+
+
+
+  
+
+
+
+
 
    function save($user)
   {

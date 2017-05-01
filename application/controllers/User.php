@@ -10,17 +10,101 @@ class User extends CI_Controller {
 		$this->load->view('user/index.php');
 		
 	}
+
+
+
+
+
+
+		public function Modificar()
+	{
+		$data= $this->obtener();
+
+
+
+
+		 $data = array();
+  		 $data['lista'] = $this->lista;
+		
+
+		$this->load->view('user/Modificar.php',$data);
+
+
+
+	}
 		//carga el login
 	public function login()
 	{
 		$this->load->view('login/index.php');
 	}
 
+	public function eliminarmostar()
+	{
+		$this->load->view('user/EliminarEmpleados.php');
+	}
+
+
+
+
+public function eliminar(){
+
+$nombre = $this->input->post('Nombre');
+	// consultar BD<
+	$r = $this->User_model->eliminar($nombre);
+
+	if(sizeof($r) > 0) {
+
+
+			echo "Datos Eliminados";
+
+				  				  	$this->load->view('user/Admin.php');
+
+				  				  }
+				  				  else{
+
+
+
+			      echo "intente Nuevamente";
+				  				  	$this->load->view('user/EliminarEmpleados.php');
+
+				  				  }
+
+
+
+		  	
+
+		}
+
+
+
+
+
 public function crearEmpleado()
 	{
 		$this->load->view('user/crearEmpleado.php');
 	}
+	public function ADMIN()
+	{
+	
+				  				  	$this->load->view('user/Admin.php');
+	}
+public function ModificarEmpleado(){
 
+
+	$this->load->view('user/ModificarEmpleados.php');
+}
+
+
+
+
+public function obtener(){
+
+
+	$nombre = $this->input->post('Nombre');
+	// consultar BD<
+	return $this->User_model->obtener($nombre);
+
+}
 
 	//carga de la base de datos
 	//autenticar usuario
@@ -44,14 +128,14 @@ public function crearEmpleado()
 
 				  				  if($tipo=="a"){
 
-				  				  	$this->load->view('user/Admin.php',$r[0]);
+				  				  	$this->load->view('user/Admin.php');
 
 				  				  }
 				  				  else{
 
 
 
-				  				  	$this->load->view('user/Empleado.php',$r[0]);
+				  				  	$this->load->view('user/Empleado.php');
 
 				  				  }
 
@@ -73,37 +157,7 @@ public function crearEmpleado()
 
 	}
 
-	//Agrega un nuevo usuario a la base de datos
-	public function crearUsuario()
-	{
-
-		$nombre= $this->input->post('nombre');
-		$apellido= $this->input->post('apellido');
-		$pass= $this->input->post('pass');
-		$email= $this->input->post('email');
-		//dejo el email por fuera, ya que puede poseer caracteres especiales
-		$usuario = array('nombre' => $nombre, 'apellido' => $apellido,'password' => $pass);
-		//recorro el arreglo
-		foreach ($usuario as $dato) {
-		//pregunto si los datos del arreglo posee algo que no sea alfanumerico
-		 if(!ctype_alnum($dato)){
-
-		 	$this->mostrar_msj('**No se permiten caracteres especiales**');
-		 }
-		 else{
-		  $usuario['email']= $email; 
-		 	
-		 	$r=$this->User_model->crearUsuario($usuario);
-		 	if(sizeof($r)>0){
-		 		redirect(base_url());
-		 	}
-		 }
-		}
-		 
-
-		
-	}
-	public function save() {
+		public function save() {
 		// objener valores
     $nombre = $this->input->post('Nombre');
 		$contrasena = $this->input->post('contraseña');
@@ -118,6 +172,17 @@ echo "a";
 
 
      $r = $this->User_model->save($user);
+
+	if($r) {
+      $this->session->set_flashdata('message','User saved');
+			redirect('User/ADMIN');
+		} else {
+      $this->session->set_flashdata('message','There was an error saving the user');
+			redirect('User/crearEmpleado');
+		}
+
+
+	
 
 		
 
