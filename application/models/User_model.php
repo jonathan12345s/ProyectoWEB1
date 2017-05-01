@@ -33,6 +33,16 @@ class User_model extends CI_Model {
 
 
 
+  function obtenerContacto($idContacto) {
+$this->db->select('nombre, contrasena,tipo');
+$this->db->from('usuario');
+$this->db->where('id = ' . $idContacto);
+$contacto = $this->db->get();
+return $contacto->result();
+}
+
+
+
 
 
  function eliminar($nombre) {

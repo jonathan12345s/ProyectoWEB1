@@ -139,6 +139,57 @@ $cantidad=$cantidad+$numero;
 
 
 
+public function ModificarEmpelado(){
+
+
+
+
+$editar = $this->input->post('editar');
+
+
+
+
+
+
+
+ 
+
+
+
+
+		$usuarios = $this->User_model->obtenerContacto($editar); //llamamos a la función getData() del modelo creado anteriormente.
+ 
+ 		$data['usuarios'] = $usuarios;
+ 
+
+ $this->load->view('user/edit.php', $data);
+
+
+
+}
+
+
+
+
+ function editar() {
+ //recogemos los datos por POST
+ $data['id'] = $_POST['id'];
+ $data['nombre'] = $_POST['txtNombre'];
+ $data['email'] = $_POST['txtEmail'];
+ $data['telefono'] = $_POST['txtTelefono'];
+ $data['direccion'] = $_POST['txtDireccion'];
+ //cargamos el modelo y llamamos a la función update()
+ $this->load->model('mantenimiento_model');
+ $this->mantenimiento_model->update($data);
+ //volvemos a cargar la primera vista
+ $this->index();
+ }
+
+
+
+
+
+
 
 
 		public function Modificar()

@@ -69,9 +69,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Create User</h1>
 	<div id="body">
-		<p>Please fill all the information below to create a new user</p>
-	
-    </div>
+		<p>Modificar Datos</p>
+
 
 
 
@@ -79,34 +78,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
- <table border="solid">
- <thead>
- <tr>
- <th></th>
- <th>nombre</th>
- <th>contraseña</th>
- <th>tipo</th>
+ 
 
- </tr>
- </thead>
  <tbody>
  <?php foreach ($usuarios as $u):?>
- 
- <tr>
- <td><input type="radio" name="editar" value="<?=$u->id?>"/></td>
- <td><?=$u->nombre?></td>
- <td><?=$u->contrasena?></td>
- <td><?=$u->tipo?></td>
 
+<table>
+ <tr>
+ <td>Nombre: </td><td><input name="txtnombre" value= <?=$u->nombre?> type="text"/></td>
  </tr>
+ <tr>
+ <td>Contraseña: </td><td><input name="txtcontrasena" value=<?=$u->contrasena?> type="text"/></td>
+ </tr>
+ <tr>
+ <td>Tipo: </td><td><input name="txtTipo" value=<?=$u->tipo?> type="text"/></td>
+ </tr>
+
+ </table>
+
+
+
  
  <?php endforeach;?>
  </tbody>
  </table>
  <input type="submit" value="Editar" />
  </form>
-	</div>
-</div>
+
+
+
 
 </body>
 </html>
