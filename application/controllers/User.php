@@ -24,6 +24,11 @@ public function crearCliente()
 		$this->load->view('Cliente/RegistrarCliente.php');
 	}
 
+	public function crearProductos()
+	{
+		$this->load->view('Productos/InsertarProductos.php');
+	}
+
 		public function saveCliente() {
 		// objener valores
     $nombre = $this->input->post('Nombre');
@@ -52,13 +57,43 @@ public function crearCliente()
 		}
 
 
-	
+
+}
+
+
+
+
+		public function saveProductos() {
+		// objener valores
+    $codigo = $this->input->post('codigo');
+		$Nombre = $this->input->post('Nombre');
+		$cantidad = $this->input->post('cantidad');
+			
 
 		
+    $Productos = array(
+        'codigo' => $codigo,
+        'Nombre' => $Nombre,
+        'cantidad' => $cantidad
+ 		
+
+      );
+
+
+     $r = $this->User_model->saveProductos($Productos);
+
+	if($r) {
+      $this->session->set_flashdata('message','User saved');
+			redirect('User/ADMIN');
+		} else {
+      $this->session->set_flashdata('message','There was an error saving the user');
+			redirect('Cliente/InsetarProductos');
+		}
 
 
 
 }
+
 
 
 

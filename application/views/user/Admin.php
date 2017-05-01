@@ -46,14 +46,10 @@
 
 
 
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear clientes</a>
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Modificar Clientes</a>
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Eliminar Clientes</a>
 
 
 
-
-<a href="<?php echo site_url('user/crearEmpleado') ?>">Crear Producto</a>
+<a href="<?php echo site_url('user/crearProductos') ?>">Crear Producto</a>
 
 <a href="<?php echo site_url('user/crearEmpleado') ?>">agregar Productos</a>
 

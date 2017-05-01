@@ -25,6 +25,12 @@ class User_model extends CI_Model {
     $r = $this->db->insert('Cliente ', $Cliente);
     return $r;
   }
+    function saveProductos($Productos)
+  {
+    $r = $this->db->insert('Producto ', $Productos);
+    return $r;
+  }
+
 
 
 
