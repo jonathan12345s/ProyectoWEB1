@@ -61,6 +61,20 @@ $this->db->where('nombre',$Cliente);
 
 
 
+ function actualizarProductos($codigo,$cantidad) {
+
+    
+
+ $this->db->set('cantidad', $cantidad);
+ 
+ $this->db->where('codigo', $codigo);
+
+  return $this->db->update('producto');
+
+
+
+
+  }
 
   
 

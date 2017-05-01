@@ -51,7 +51,7 @@
 
 <a href="<?php echo site_url('user/crearProductos') ?>">Crear Producto</a>
 
-<a href="<?php echo site_url('user/crearEmpleado') ?>">agregar Productos</a>
+<a href="<?php echo site_url('user/AgregarProductos') ?>">agregar Productos</a>
 
 
 

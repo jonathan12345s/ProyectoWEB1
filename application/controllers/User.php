@@ -16,7 +16,10 @@ class User extends CI_Controller {
 
 
 
-
+public function AgregarProductos()
+	{
+		$this->load->view('Productos/AgregarProductos.php');
+	}
 
 
 public function crearCliente()
@@ -55,6 +58,41 @@ public function crearCliente()
       $this->session->set_flashdata('message','There was an error saving the user');
 			redirect('Cliente/RegistrarCliente');
 		}
+
+
+
+
+
+}
+public function actualizarProductos() {
+		// objener valores
+    $codigo = $this->input->post('codigo');
+		$cantidad = $this->input->post('cantidad');
+	
+
+		
+    
+
+
+     $r = $this->User_model->actualizarProductos($codigo,$cantidad);
+
+
+	if(sizeof($r) > 0) {
+
+
+			echo "Datos actualizados";
+
+				  				  	$this->load->view('user/Admin.php');
+
+				  				  }
+				  				  else{
+
+
+
+			      echo "intente Nuevamente";
+				  				  	$this->load->view('Cliente/EliminarCliente.php');
+
+				  				  }
 
 
 
