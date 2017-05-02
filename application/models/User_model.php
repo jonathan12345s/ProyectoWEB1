@@ -19,6 +19,22 @@ class User_model extends CI_Model {
 	  return $query->result();
 
   }
+function obtenerclientes() {
+
+    
+
+
+      $query = $this->db->get('cliente');
+
+    return $query->result();
+
+  }
+
+
+
+
+
+
 
   function savecliente($Cliente)
   {
@@ -43,6 +59,16 @@ return $contacto->result();
 
 
 
+  function obtenercliente($idContacto) {
+$this->db->select('nombre, edad,dirrecion,telefono,id');
+$this->db->from('cliente');
+$this->db->where('id = ' . $idContacto);
+$contacto = $this->db->get();
+return $contacto->result();
+}
+
+
+
 
 
 
@@ -58,6 +84,19 @@ function update($nombre,$contrasena ,$tipo ,$id ) {
 
  }
 
+
+function updateCliente($nombre,$edad ,$dirrecion ,$telefono,$id){
+
+
+ $this->db->set('nombre', $nombre);
+ $this->db->set('edad',$edad);
+ $this->db->set('dirrecion', $dirrecion);
+ $this->db->set('telefono', $telefono);
+
+ $this->db->where('id', $id );
+ $this->db->update('cliente');
+
+ }
 
 
 

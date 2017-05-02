@@ -45,6 +45,7 @@
   <body>
 
 
+<form name="tabla" action="<?php echo site_url('User/ModificarCliente'); ?>"  method="POST">
 
 
 
@@ -52,55 +53,37 @@
 
 
 
+ <table border="solid">
+ <thead>
+ <tr>
+ <th></th>
+ <th>nombre</th>
+ <th>edad</th>
+ <th>dirrecion</th>
+ <th>telefono</th>
 
-      
-        <div id="Administrador">
-          <h1>Bienvenido!</h1>
-          
-     <p>Pagina principal de administrador</p>
+ </tr>
+ </thead>
+ <tbody>
+ <?php foreach ($usuarios as $u):?>
+ 
+ <tr>
+ <td><input type="radio" name="editar" value="<?=$u->id?>"/></td>
+ <td><?=$u->nombre?></td>
+ <td><?=$u->edad?></td>
+ <td><?=$u->dirrecion?></td>
 
+  <td><?=$u->telefono?></td>
 
-
-
-
-<a class="badge" href="<?php echo site_url('user/crearEmpleado') ?>">Crear Empleados</a>
-<a class="badge"  href="<?php echo site_url('user/ModificarEmpleado') ?>">Modificar Empleados</a>
-<a class="badge"  href="<?php echo site_url('user/eliminarmostar') ?>">Eliminar Empleados</a>
-
-
-
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearCliente') ?>">Crear clientes</a>
-<a class="badge"  href="<?php echo site_url('user/VistaModificarCliente') ?>">Modificar Clientes</a>
-<a class="badge"  href="<?php echo site_url('user/eliminarclientemostar') ?>">Eliminar Clientes</a>
-
-
-
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearProductos') ?>">Crear Producto</a>
-
-<a class="badge"   href="<?php echo site_url('user/AgregarProductos') ?>">agregar Productos</a>
+ </tr>
+ 
+ <?php endforeach;?>
+ </tbody>
+ </table>
+ <input type="submit" value="Editar" />
+ </form>
 
 
 
-
-<a class="badge"  href="<?php echo site_url('user/crearEmpleado') ?>">ver Reportes</a>
-
-
-
-
-
-
-
-
-
-       
-        <script src="<?php base_url();?> util/js/login/index.js"></script>
       </body>
     </html>

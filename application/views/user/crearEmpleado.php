@@ -1,3 +1,5 @@
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
@@ -86,6 +88,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      tipo: <input type="text" name="tipo" value="">
 
 
+
+<a href="<?=$_SERVER['HTTP_REFERER']?>" >Volver </a>
 
 
 

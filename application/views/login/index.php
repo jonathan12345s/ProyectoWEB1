@@ -47,7 +47,7 @@
 
     <div class="container">
 
-    <form action="autenticar" method="post"> 
+    <form action="autenticar" method="post" class="form-signin"> 
         <h2 class="form-signin-heading">Por Favor Inicie Sesión</h2>
 
 

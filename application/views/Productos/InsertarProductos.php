@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       cantidad: <input type="text" name="cantidad" value="">
 
-
+ Precio: <input type="text" name="precio" value="">
 
 
 

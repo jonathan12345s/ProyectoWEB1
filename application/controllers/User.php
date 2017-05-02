@@ -110,14 +110,14 @@ $cantidad=$cantidad+$numero;
     $codigo = $this->input->post('codigo');
 		$Nombre = $this->input->post('Nombre');
 		$cantidad = $this->input->post('cantidad');
-			
+			$precio = $this->input->post('precio');
 
 		
     $Productos = array(
         'codigo' => $codigo,
         'Nombre' => $Nombre,
-        'cantidad' => $cantidad
- 		
+        'cantidad' => $cantidad,
+ 		 'precio' => $precio
 
       );
 
@@ -171,15 +171,38 @@ $editar = $this->input->post('editar');
 
 
 
-function ModificarCliente(){
+public function ModificarCliente(){
 
 
 
-	 $this->load->view('user/1.php');
+
+$editar = $this->input->post('editar');
+
+
+
+
+
+
+
+ 
+
+
+
+
+		$usuarios = $this->User_model->obtenercliente($editar); //llamamos a la función getData() del modelo creado anteriormente.
+ 
+ 		$data['usuarios'] = $usuarios;
+ 
+
+		 $this->load->view('Cliente/editClientes.php', $data);
 
 
 
 }
+
+
+
+
 
 
 
@@ -221,6 +244,39 @@ $tipo ,$id );
  }
 
 
+
+
+
+ function editarCliente() {
+
+
+
+
+
+
+
+$nombre = $this->input->post('txtnombre');
+
+$edad = $this->input->post('txtedad');
+
+$dirrecion = $this->input->post('txtdirrecion');
+
+$telefono = $this->input->post('txttelefono');
+
+$id = $this->input->post('txtid');
+
+
+
+  
+
+ //recogemos los datos por POST
+
+ $this->User_model->updateCliente($nombre,$edad ,
+$dirrecion ,$telefono,$id);
+
+
+  	$this->load->view('user/Admin.php');
+ }
 
 
 
@@ -295,6 +351,30 @@ $nombre = $this->input->post('Nombre');
 		  	
 
 		}
+
+
+		public function VistaModificarCliente(){
+
+
+			$usuarios = $this->User_model->obtenerclientes(); 
+ 
+ 				$data['usuarios'] = $usuarios;
+
+
+
+
+
+
+				$this->load->view('Cliente/ModificarClientes.php',$data);
+
+
+
+		}
+
+
+
+
+
 
 public function eliminar(){
 
