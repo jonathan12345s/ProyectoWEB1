@@ -10,7 +10,11 @@ class User extends CI_Controller {
 		$this->load->view('user/index.php');
 		
 	}
+public function VistaFactura(){
 
+
+	$this->load->view("factura/factura.php");
+}
 
 
 

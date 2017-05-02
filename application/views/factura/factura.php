@@ -61,42 +61,20 @@
 
 
 
-
-
-<a class="badge" href="<?php echo site_url('user/VistaFactura') ?>">Fracturar</a>
-<a class="badge"  href="<?php echo site_url('user/ModificarEmpleado') ?>">Modificar Empleados</a>
-<a class="badge"  href="<?php echo site_url('user/eliminarmostar') ?>">Eliminar Empleados</a>
-
-
-
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearCliente') ?>">Crear clientes</a>
-<a class="badge"  href="<?php echo site_url('user/VistaModificarCliente') ?>">Modificar Clientes</a>
-<a class="badge"  href="<?php echo site_url('user/eliminarclientemostar') ?>">Eliminar Clientes</a>
-
-
-
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearProductos') ?>">Crear Producto</a>
-
-<a class="badge"   href="<?php echo site_url('user/AgregarProductos') ?>">agregar Productos</a>
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearEmpleado') ?>">ver Reportes</a>
-
-
-
-
-
-
+<form class="form-inline">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 
 
 
