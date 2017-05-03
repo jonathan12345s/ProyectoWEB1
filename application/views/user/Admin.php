@@ -46,7 +46,7 @@
 
 
     <div id="Administrador">
-        <h1>Bienvenido!</h1>
+        <h1 >Bienvenido!</h1>
 
         <p>Pagina principal de administrador</p>
 
@@ -54,46 +54,57 @@
 
 
 
-        <a class="badge" href="crearEmpleado">Crear Empleados</a>
-        <a class="badge" href="ModificarEmpleado">Modificar Empleados</a>
+        <a class="btn-info" href="crearEmpleado">Crear Empleados</a>
+        <br>
+        <br>
+        <a class="btn-primary" href="ModificarEmpleado">Modificar Empleados</a>
  
+ <br>
+ <br>
  
- 
 
-<a class="badge" href="<?php echo site_url('user/eliminarmostar'); ?>">Eliminar Empleado</a>
-
+<a class="btn-info" href="<?php echo site_url('user/eliminarmostar'); ?>">Eliminar Empleado</a>
 
 
+<br>
+<br>
 
 
 
 
-        <a class="badge" href="crearcliente">Crear clientes</a>
+        <a class="btn-primary" href="crearcliente">Crear clientes</a>
+        <br>
+        <br>
    
 
-<a class="badge" href="<?php echo site_url('user/VistaModificarCliente'); ?>">Modificar Clientes</a>
+<a class="btn-info" href="<?php echo site_url('user/VistaModificarCliente'); ?>">Modificar Clientes</a>
+<br><br>
 
 
-        <a class="badge" href="eliminarclientemostar">Eliminar Clientes</a>
+        <a class="btn-primary" href="eliminarclientemostar">Eliminar Clientes</a>
 
-
-
-
-
-        <a class="badge" href="crearProductos">Crear Producto</a>
-
-        <a class="badge" href="AgregarProductos">agregar Productos</a>
+<br><br>
 
 
 
+        <a class="btn-info" href="crearProductos">Crear Producto</a>
+        <br>
+        <br>
 
-        <a class="badge" href="<?php echo site_url('user/crearEmpleado') ?>">ver Reportes</a>
+        <a class="btn-primary" href="AgregarProductos">agregar Productos</a>
+        <br>
+        <br>
+
+
+
+
+        <a class="btn-primary" href="<?php echo site_url('user/crearEmpleado') ?>">ver Reportes</a>
 
 
 
 
 
-        <script src="<?php base_url();?> util/js/login/index.js"></script>
+       
 </body>
 
 </html>

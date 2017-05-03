@@ -16,3 +16,6 @@
             return false;
         }
     }
+    function FnVolver(){ 
+history.back();} 
+</script>

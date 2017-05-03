@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -67,8 +71,7 @@
 
 
 
-
-            <br>
+ <br>
 
             <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
 
