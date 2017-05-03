@@ -311,7 +311,7 @@ class User extends CI_Controller
 			{
 			$name = $r[0]->nombre;
 			$tipo = $r[0]->tipo;
-			if ($tipo == "a")
+			if ($tipo == "Administrador")
 				{
 				$this->load->view('user/Admin.php');
 				}
