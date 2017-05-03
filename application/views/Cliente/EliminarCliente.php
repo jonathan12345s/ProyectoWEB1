@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -46,41 +45,38 @@
 
     <div id="container">
         <h1>Eliminar Cliente</h1>
-            <div id="body">
-                <p>Ingrese el Nombre del Cliente a Eliminar</p>
+        <div id="body">
+            <p>Ingrese el Nombre del Cliente a Eliminar</p>
 
-            </div>
-                <form class=""  action="<?php echo site_url('User/eliminarCliente'); ?>"  method="post">
-
-
+        </div>
+        <form class="" action="<?php echo site_url('User/eliminarCliente'); ?>" method="post">
 
 
 
 
-     			 Nombre: <input type="text" name="Nombre"  value=""onkeypress="return soloLetras(event) " required autofocus>
+
+            Nombre:
+            <input type="text" name="Nombre" value="" onkeypress="return soloLetras(event) " required autofocus>
 
 
-                <button type="submit" class="button button-block" />Iniciar</button>
+            <button type="submit" class="button button-block" />Iniciar</button>
 
 
 
 
-                <br>
+            <br>
 
-                <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
+            <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
 
-                <br>
-                <script type="text/javascript" src="java/java.js"></script>
+            <br>
+            <script type="text/javascript" src="java/java.js"></script>
 
 
-                <button type="submit" class="button button-block" />Iniciar</button>
-            </form>
+            <button type="submit" class="button button-block" />Iniciar</button>
+        </form>
     </div>
     </div>
 
 </body>
 
 </html>
-
-
-

@@ -315,7 +315,7 @@ class User extends CI_Controller
 				{
 				$this->load->view('user/Admin.php');
 				}
-			  else
+			  else if ($tipo == "Empleado")
 				{
 				$this->load->view('user/Empleado.php');
 				}
@@ -328,6 +328,9 @@ class User extends CI_Controller
 		  else
 			{
 			echo "usuario invalido";
+
+				$this->load->view('login/index.php');
+
 			}
 		}
 
