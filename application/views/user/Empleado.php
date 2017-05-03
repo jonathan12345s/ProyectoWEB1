@@ -59,12 +59,7 @@
                     </i> <span class="network-name">Fracturar</span>
                 </a>
             </li>
-            <li>
-
-                <a href="ModificarEmpleado" class="btn btn-default btn-lg">
-                    </i> <span class="network-name">Modificar Empleados</span>
-                </a>
-            </li>
+       
             <li>
 
                 <a href="<?php echo site_url('user/index') ?>" class="btn btn-default btn-lg">
