@@ -12,7 +12,7 @@ class User extends CI_Controller
 
 		// carga la vista user index
 
-		$this->load->view('user/index.php');
+		$this->load->view('login/index.php');
 		}
 
 
@@ -333,16 +333,15 @@ class User extends CI_Controller
 			$tipo = $r[0]->tipo;
 			if ($tipo == "Administrador")
 				{
+					echo "	USUARIO : $name ";
 				$this->load->view('user/Admin.php');
 				}
 			  else if ($tipo == "Empleado")
 				{
+					echo "	USUARIO : $name ";
 				$this->load->view('user/Empleado.php');
 				}
 
-			echo "Hello $tipo";
-
-			// /	$this->session->set_userdata('usuario', $r[0]);
 
 			}
 		  else

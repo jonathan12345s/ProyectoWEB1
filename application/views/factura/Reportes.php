@@ -41,7 +41,12 @@
 
 
 
+    <div id="container">
+        <h1>Reportes  de Facturas</h1>
+        <div id="body">
+            <p> Reportes  </p>
 
+        </div>
 
     <form name="tabla" action="<?php echo site_url('User/ModificarEmpelado'); ?>" method="POST">
 
@@ -73,8 +78,6 @@
                         <?=$u->idCliente?></td>
                     <td>
                         <?=$u->codigoproducto?></td>
-
-             
 
                     <td>
                         <?=$u->cantidad?></td>

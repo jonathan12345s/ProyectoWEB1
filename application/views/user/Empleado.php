@@ -66,5 +66,10 @@
 <a class="badge" href="<?php echo site_url('user/VistaFactura') ?>">Fracturar</a>
 <a class="badge"  href="<?php echo site_url('user/ModificarEmpleado') ?>">Modificar Empleados</a>
 
+
+<a class="badge"   href="<?php echo site_url('user/index') ?>">Salir</a>
+
+
+
       </body>
     </html>

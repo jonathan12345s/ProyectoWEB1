@@ -101,7 +101,7 @@
         <a class="btn-primary" href="<?php echo site_url('user/Reportes') ?>">ver Reportes</a>
 
 
-
+         <a class="badge"  href="<?php echo site_url('user/index') ?>">Salir</a>
 
 
        
