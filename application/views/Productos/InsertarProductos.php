@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>Please fill all the information below to create a new user</p>
 	
     </div>
-    <form class=""   action="<?php echo site_url('User/saveProductos'); ?>"  method="post">
+    <form class=""   action="<?php echo site_url('User/saveProductos'); ?>" method="post">
 
 
 

@@ -1,189 +1,125 @@
 <?php
-class User_model extends CI_Model {
+class User_model extends CI_Model
 
-  function autenticar($email, $pass) {
+  {
+  function autenticar($email, $pass)
+    {
+    $query = $this->db->get_where('usuario', array(
+      'nombre' => $email,
+      'contrasena' => $pass
+    ));
+    return $query->result_object();
+    }
 
-    $query = $this->db->get_where('usuario',
-      array('nombre' => $email, 'contrasena' => $pass));
-
-	  return $query->result_object();
-  }
-
-
-
-
- function obtener($nombre) {
-
-    $query = $this->db->get_where('usuario',  array('nombre' => $nombre));
-
-	  return $query->result();
-
-  }
-function obtenerclientes() {
-
-    
-
-
-      $query = $this->db->get('cliente');
-
+  function obtener($nombre)
+    {
+    $query = $this->db->get_where('usuario', array(
+      'nombre' => $nombre
+    ));
     return $query->result();
+    }
 
-  }
-  function  obtenerProducto() {
-
-    
-
-
-      $query = $this->db->get('producto');
-
+  function obtenerclientes()
+    {
+    $query = $this->db->get('cliente');
     return $query->result();
+    }
 
-  }
+  function saveFactura($Codigo, $Cliente, $CodigoProducto, $cantidad)
+    {
+    $this->db->set('codigo', $Codigo);
+    $this->db->set('idCliente', $Cliente);
+    $this->db->set('codigoproducto', $CodigoProducto);
+    $this->db->set('cantidad', $cantidad);
+    $r = $this->db->insert('factura');
+    return $r;
+    }
 
-
-
-
-
-
-
+  function obtenerProducto()
+    {
+    $query = $this->db->get('producto');
+    return $query->result();
+    }
 
   function savecliente($Cliente)
-  {
+    {
     $r = $this->db->insert('Cliente ', $Cliente);
     return $r;
-  }
-    function saveProductos($Productos)
-  {
+    }
+
+  function saveProductos($Productos)
+    {
     $r = $this->db->insert('Producto ', $Productos);
     return $r;
-  }
+    }
 
+  function obtenerContacto($idContacto)
+    {
+    $this->db->select('nombre, contrasena,tipo,id');
+    $this->db->from('usuario');
+    $this->db->where('id = ' . $idContacto);
+    $contacto = $this->db->get();
+    return $contacto->result();
+    }
 
+  function obtenercliente($idContacto)
+    {
+    $this->db->select('nombre, edad,dirrecion,telefono,id');
+    $this->db->from('cliente');
+    $this->db->where('id = ' . $idContacto);
+    $contacto = $this->db->get();
+    return $contacto->result();
+    }
 
-  function obtenerContacto($idContacto) {
-$this->db->select('nombre, contrasena,tipo,id');
-$this->db->from('usuario');
-$this->db->where('id = ' . $idContacto);
-$contacto = $this->db->get();
-return $contacto->result();
-}
+  function update($nombre, $contrasena, $tipo, $id)
+    {
+    $this->db->set('nombre', $nombre);
+    $this->db->set('contrasena', $contrasena);
+    $this->db->set('tipo', $tipo);
+    $this->db->where('id', $id);
+    $this->db->update('usuario');
+    }
 
+  function updateCliente($nombre, $edad, $dirrecion, $telefono, $id)
+    {
+    $this->db->set('nombre', $nombre);
+    $this->db->set('edad', $edad);
+    $this->db->set('dirrecion', $dirrecion);
+    $this->db->set('telefono', $telefono);
+    $this->db->where('id', $id);
+    $this->db->update('cliente');
+    }
 
-
-  function obtenercliente($idContacto) {
-$this->db->select('nombre, edad,dirrecion,telefono,id');
-$this->db->from('cliente');
-$this->db->where('id = ' . $idContacto);
-$contacto = $this->db->get();
-return $contacto->result();
-}
-
-
-
-
-
-
-function update($nombre,$contrasena ,$tipo ,$id ) {
-
-
- $this->db->set('nombre', $nombre);
- $this->db->set('contrasena',$contrasena);
- $this->db->set('tipo', $tipo);
- 
- $this->db->where('id', $id );
- $this->db->update('usuario');
-
- }
-
-
-function updateCliente($nombre,$edad ,$dirrecion ,$telefono,$id){
-
-
- $this->db->set('nombre', $nombre);
- $this->db->set('edad',$edad);
- $this->db->set('dirrecion', $dirrecion);
- $this->db->set('telefono', $telefono);
-
- $this->db->where('id', $id );
- $this->db->update('cliente');
-
- }
-
-
-
-
- function eliminar($nombre) {
-
-    
-
-$this->db->where('nombre',$nombre);
+  function eliminar($nombre)
+    {
+    $this->db->where('nombre', $nombre);
     return $this->db->delete('usuario');
+    }
 
-
-
-
-  }
-
- function eliminarCliente($Cliente) {
-
-    
-
-$this->db->where('nombre',$Cliente);
+  function eliminarCliente($Cliente)
+    {
+    $this->db->where('nombre', $Cliente);
     return $this->db->delete('Cliente');
+    }
 
+  function actualizarProductos($codigo, $cantidad)
+    {
+    $this->db->set('cantidad', $cantidad);
+    $this->db->where('codigo', $codigo);
+    return $this->db->update('producto');
+    }
 
-
-
-  }
-
-
-
- function actualizarProductos($codigo,$cantidad) {
-
-    
-
- $this->db->set('cantidad', $cantidad);
- 
- $this->db->where('codigo', $codigo);
-
-  return $this->db->update('producto');
-
-
-
-
-  }
-
- function ObtenerCantidadInvetrio($codigo){
-
-
-
-    
-
-$query = $this->db->get_where('producto',
-      array('codigo' => $codigo));
-
+  function ObtenerCantidadInvetrio($codigo)
+    {
+    $query = $this->db->get_where('producto', array(
+      'codigo' => $codigo
+    ));
     return $query->result_object();
+    }
 
-
-
-
-
-
-  }
-
-  
-
-
-
-
-
-
-
-
-   function save($user)
-  {
+  function save($user)
+    {
     $r = $this->db->insert('usuario', $user);
     return $r;
+    }
   }
-
-}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to RidesCR</title>
+
+</head>
+<body>
+
+<div id="container">
+	<h1>Create User</h1>
+	<div id="body">
+		<p>Please fill all the information below to create a new user</p>
+	
+    </div>
+    <form class=""   action="<?php echo site_url('User/eliminar'); ?>"  method="post">
+
+
+      Nombre: <input type="text" name="Nombre" value="">
+      
+ 
+
+
+
+
+
+    <button type="submit" class="button button-block"/>Iniciar</button>
+    </form>
+	</div>
+</div>
+
+</body>
+</html>

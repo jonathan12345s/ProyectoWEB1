@@ -67,7 +67,7 @@
 
 
 
-<form class="form-inline">
+<form class="form-inline"   action="guardarFactura"  method="post" >
   <div class="form-group">
 
       <label for="email">Codigo Factura:</label>
