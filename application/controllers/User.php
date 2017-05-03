@@ -5,7 +5,8 @@ class User extends CI_Controller
 
 	{
 
-	// carga de vistas
+	// carga de vistas login
+
 
 	public function index()
 		{
@@ -16,7 +17,7 @@ class User extends CI_Controller
 		}
 
 
-
+////craga reportes
 
 	public function Reportes()
 		{
@@ -34,6 +35,7 @@ class User extends CI_Controller
 
 
 		}
+		////craga vista
 
 	public function VistaFactura()
 		{
@@ -43,6 +45,9 @@ class User extends CI_Controller
 		$data2['productos'] = $Productos;
 		$this->load->view("factura/factura.php", $data1, $data2);
 		}
+
+
+		////guarda factura
 
 	public function saveFactura()
 		{
@@ -63,21 +68,27 @@ class User extends CI_Controller
 			}
 		}
 
+
+		/////vista agragrar producto
+
 	public function AgregarProductos()
 		{
 		$this->load->view('Productos/AgregarProductos.php');
 		}
 
+
+		/////craer cliente
+
 	public function crearCliente()
 		{
 		$this->load->view('Cliente/RegistrarCliente.php');
 		}
-
+/////craer producto
 	public function crearProductos()
 		{
 		$this->load->view('Productos/InsertarProductos.php');
 		}
-
+/////guardar cliente
 	public function saveCliente()
 		{
 
@@ -105,7 +116,7 @@ class User extends CI_Controller
 			redirect('Cliente/RegistrarCliente');
 			}
 		}
-
+/////actualizarProductos
 	public function actualizarProductos()
 		{
 
@@ -128,6 +139,8 @@ class User extends CI_Controller
 			$this->load->view('Cliente/EliminarCliente.php');
 			}
 		}
+
+////guardarproductos
 
 	public function saveProductos()
 		{
@@ -156,6 +169,8 @@ class User extends CI_Controller
 			redirect('Cliente/InsetarProductos');
 			}
 		}
+		////ModificarEmpelado
+
 
 	public function ModificarEmpelado()
 		{
@@ -165,6 +180,8 @@ class User extends CI_Controller
 		$this->load->view('user/edit.php', $data);
 		}
 
+		////Modificarclientes
+
 	public function ModificarCliente()
 		{
 		$editar = $this->input->post('editar');
@@ -172,7 +189,7 @@ class User extends CI_Controller
 		$data['usuarios'] = $usuarios;
 		$this->load->view('Cliente/editClientes.php', $data);
 		}
-
+////edita
 	public function editar()
 		{
 		$nombre = $this->input->post('txtnombre');
@@ -192,6 +209,9 @@ class User extends CI_Controller
 		$this->load->view('user/Admin.php');
 		}
 
+
+
+////editarclientes
 	public function editarCliente()
 		{
 		$nombre = $this->input->post('txtnombre');
@@ -205,7 +225,7 @@ class User extends CI_Controller
 		$this->User_model->updateCliente($nombre, $edad, $dirrecion, $telefono, $id);
 		$this->load->view('user/Admin.php');
 		}
-
+///modifica
 	public function Modificar()
 		{
 		$Nombre = $this->input->post('Nombre');
@@ -216,12 +236,13 @@ class User extends CI_Controller
 
 		$this->load->view('user/Modificar.php', $data); //llamada a la vista, que crearemos posteriorme
 		}
-
+///cargalogin
 
 	public function login()
 		{
 		$this->load->view('login/index.php');
 		}
+		////eliminar
 
 	public function eliminarmostar()
 		{
@@ -234,12 +255,17 @@ class User extends CI_Controller
 
 
 
+	////eliminarcliientemostar
 
 
 	public function eliminarclientemostar()
 		{
 		$this->load->view('Cliente/EliminarCliente.php');
 		}
+
+
+
+		////eliminarcliente
 
 	public function eliminarCliente()
 		{
@@ -260,6 +286,8 @@ class User extends CI_Controller
 			}
 		}
 
+		/////vista cliente
+
 	public function VistaModificarCliente()
 		{
 		$usuarios = $this->User_model->obtenerclientes();
@@ -267,6 +295,8 @@ class User extends CI_Controller
 		$this->load->view('Cliente/ModificarClientes.php', $data);
 		}
 
+
+///eliminar
 	public function eliminar()
 		{
 		$nombre = $this->input->post('Nombre');
@@ -286,21 +316,28 @@ class User extends CI_Controller
 			}
 		}
 
+
+
+///crearempleado
 	public function crearEmpleado()
 		{
 		$this->load->view('user/crearEmpleado.php');
 		}
+
+		///funcion admin
 
 	public function ADMIN()
 		{
 		$this->load->view('user/Admin.php');
 		}
 
+		///funcion modificarempleado
+
 	public function ModificarEmpleado()
 		{
 		$this->load->view('user/ModificarEmpleados.php');
 		}
-
+///funcion obtener
 	public function obtener()
 		{
 		$nombre = $this->input->post('Nombre');
@@ -352,7 +389,7 @@ class User extends CI_Controller
 
 			}
 		}
-
+//// guardar
 	public function save()
 		{
 

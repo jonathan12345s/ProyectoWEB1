@@ -2,6 +2,8 @@
 class User_model extends CI_Model
 
   {
+
+    ///autenticar
   function autenticar($email, $pass)
     {
     $query = $this->db->get_where('usuario', array(
@@ -11,6 +13,9 @@ class User_model extends CI_Model
     return $query->result_object();
     }
 
+
+
+///obtener usuario
   function obtener($nombre)
     {
     $query = $this->db->get_where('usuario', array(
@@ -18,6 +23,9 @@ class User_model extends CI_Model
     ));
     return $query->result();
     }
+
+
+    ///obclientes
  function obtenerclientesid($id)
     {
     
@@ -30,6 +38,8 @@ class User_model extends CI_Model
     $cliente = $this->db->get();
     return $cliente->result();
     }
+
+    ///obtner productos por id
 
  function obtenerproductosid($codigo)
     {
@@ -47,7 +57,7 @@ class User_model extends CI_Model
 
 
 
-
+/// obtner cliente
 
 
 
@@ -59,6 +69,8 @@ class User_model extends CI_Model
     return $query->result();
     }
 
+
+///guardar factura
   function saveFactura($Codigo, $Cliente, $CodigoProducto, $cantidad)
     {
     $this->db->set('codigo', $Codigo);
@@ -69,11 +81,15 @@ class User_model extends CI_Model
     return $r;
     }
 
+
+    ////obtner producto
+
   function obtenerProducto()
     {
     $query = $this->db->get('producto');
     return $query->result();
     }
+    ///guardar clientes 
 
   function savecliente($Cliente)
     {
@@ -81,12 +97,14 @@ class User_model extends CI_Model
     return $r;
     }
 
+    ///guardar productos
+
   function saveProductos($Productos)
     {
     $r = $this->db->insert('Producto ', $Productos);
     return $r;
     }
-
+///obtner contacto
   function obtenerContacto($idContacto)
     {
     $this->db->select('nombre, contrasena,tipo,id');
@@ -95,6 +113,8 @@ class User_model extends CI_Model
     $contacto = $this->db->get();
     return $contacto->result();
     }
+
+    ///obtner cliente
 
   function obtenercliente($idContacto)
     {
@@ -105,6 +125,8 @@ class User_model extends CI_Model
     return $contacto->result();
     }
 
+
+////actulizar
   function update($nombre, $contrasena, $tipo, $id)
     {
     $this->db->set('nombre', $nombre);
@@ -113,6 +135,10 @@ class User_model extends CI_Model
     $this->db->where('id', $id);
     $this->db->update('usuario');
     }
+
+
+
+    ////actualizar cliente
 
   function updateCliente($nombre, $edad, $dirrecion, $telefono, $id)
     {
@@ -123,26 +149,26 @@ class User_model extends CI_Model
     $this->db->where('id', $id);
     $this->db->update('cliente');
     }
-
+////eliminar eliminar nombre
   function eliminar($nombre)
     {
     $this->db->where('nombre', $nombre);
     return $this->db->delete('usuario');
     }
-
+///eliminar cliente
   function eliminarCliente($Cliente)
     {
     $this->db->where('nombre', $Cliente);
     return $this->db->delete('Cliente');
     }
-
+///actualizar producto
   function actualizarProductos($codigo, $cantidad)
     {
     $this->db->set('cantidad', $cantidad);
     $this->db->where('codigo', $codigo);
     return $this->db->update('producto');
     }
-
+///obtner inventari
   function ObtenerCantidadInvetrio($codigo)
     {
     $query = $this->db->get_where('producto', array(
@@ -150,7 +176,7 @@ class User_model extends CI_Model
     ));
     return $query->result_object();
     }
-
+///guardar usuario
   function save($user)
     {
     $r = $this->db->insert('usuario', $user);
@@ -160,7 +186,7 @@ class User_model extends CI_Model
 
 
 
-
+///obtner factura
      function ObtenerFactura() {
     $query = $this->db->get('factura');
     return $query->result();
