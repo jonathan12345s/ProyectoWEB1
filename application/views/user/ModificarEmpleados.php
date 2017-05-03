@@ -53,7 +53,7 @@
 
 
                 Nombre:
-                <input type="text" name="Nombre" value="" onkeypress="return soloLetras(event) " required autofocus>
+                <input type="text" name="Nombre" value="" required pattern="[a-zA-Z]*" required autofocus>
 
 
 
@@ -63,13 +63,12 @@
 
 
 
-
                 <br>
 
                 <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
 
                 <br>
-                <script type="text/javascript" src="java/java.js"></script>
+      
 
 
                 <button type="submit" class="button button-block" />Iniciar</button>

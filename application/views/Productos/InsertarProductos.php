@@ -57,7 +57,7 @@
 
 codigo: <input type="number" name="codigo" value=""  onkeypress="return soloLetras(event) " required autofocus>
 
-         Nombre:<input type="text" name="Nombre" value="" onkeypress="return soloLetras(event) " required autofocus> 
+         Nombre:<input type="text" name="Nombre" value="" required pattern="[a-zA-Z]*" required autofocus> 
 
 
 

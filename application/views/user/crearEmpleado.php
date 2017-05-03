@@ -41,7 +41,7 @@
 
 </head>
 
-<body>
+<body background-image:url (/img/tuimagen.jpg);>
 
 
 
@@ -57,7 +57,7 @@
 
 
             Nombre:
-            <input type="text" name="Nombre" value="" onkeypress="return soloLetras(event) " required autofocus> contrasena:
+            <input type="text" name="Nombre" value="" required pattern="[a-zA-Z]*" required autofocus> contrasena:
             <input type="password" name="contraseña" required autofocus> Tipo :
             <select name="tipo">
 
@@ -76,7 +76,7 @@
             <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
 
             <br>
-            <script type="text/javascript" src="java/java.js"></script>
+           
 
 
             <button type="submit" class="button button-block" />Iniciar</button>

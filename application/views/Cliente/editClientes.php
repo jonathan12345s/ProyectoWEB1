@@ -61,23 +61,23 @@
                 <tr>
                     <td>Nombre: </td>
                     <td>
-                        <input name="txtnombre" value=<?=$u->nombre?> type="text" required autofocus/></td>
+                        <input name="txtnombre" value=<?=$u->nombre?> type="text"  required pattern="[a-zA-Z]*" required autofocus/></td>
                 </tr>
                 <tr>
                     <td>edad: </td>
                     <td>
-                        <input name="txtedad" value=<?=$u->edad?> type="text"/ required autofocus></td>
+                        <input name="txtedad" type="number" value=<?=$u->edad?>  required autofocus ></td>
                 </tr>
                 <tr>
                     <td>dirrecion: </td>
                     <td>
-                        <input name="txtdirrecion" value=<?=$u->dirrecion?> required autofocus type="text"/></td>
+                        <input name="txtdirrecion" value=<?=$u->dirrecion?> required pattern="[a-zA-Z]*" required autofocus type="text"/></td>
                 </tr>
 
                 <tr>
                     <td>telefono: </td>
                     <td>
-                        <input name="txttelefono" value=<?=$u->telefono?> required autofocus type="text"/></td>
+                        <input name="txttelefono" value=<?=$u->telefono?> required autofocus  type="number" /></td>
                 </tr>
 
             </table>

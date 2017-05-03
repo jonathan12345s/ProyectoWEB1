@@ -56,7 +56,7 @@
 
 
 
-     			 Nombre: <input type="text" name="Nombre"  value=""onkeypress="return soloLetras(event) " required autofocus>
+     			 Nombre: <input type="text" name="Nombre"  value="" required pattern="[a-zA-Z]*" required autofocus>
 
 
                 <button type="submit" class="button button-block" />Iniciar</button>

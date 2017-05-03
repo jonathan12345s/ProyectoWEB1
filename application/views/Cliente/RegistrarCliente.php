@@ -52,21 +52,15 @@
 
 
             Nombre:
-            <input type="text" name="Nombre" value="" onkeypress="return soloLetras(event) " required autofocus> Edad:
-            <input type="number" name="Edad" value="" onkeypress="return soloLetras(event) " required autofocus> Dirrecion:
-            <input type="text" name="Dirrecion" value="" onkeypress="return soloLetras(event) " required autofocus> Telefono:
-            <input type="number" name="Telefono" value="" onkeypress="return soloLetras(event) " required autofocus>
+            <input type="text" name="Nombre" value="" required pattern="[a-zA-Z]* "required autofocus> Edad:
+            <input type="number" name="Edad" value="" required pattern="[a-zA-Z]*"required autofocus> Dirrecion:
+            <input type="text" name="Dirrecion" value="" required pattern="[a-zA-Z]*"required autofocus> Telefono:
+            <input type="number" name="Telefono" value="" required pattern="[a-zA-Z]*" required autofocus>
 
 
 
 
 
-            <br>
-
-            <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
-
-            <br>
-            <script type="text/javascript" src="java/java.js"></script>
 
                 <br>
 

@@ -65,42 +65,6 @@
 
 <a class="badge" href="<?php echo site_url('user/VistaFactura') ?>">Fracturar</a>
 <a class="badge"  href="<?php echo site_url('user/ModificarEmpleado') ?>">Modificar Empleados</a>
-<a class="badge"  href="<?php echo site_url('user/eliminarmostar') ?>">Eliminar Empleados</a>
 
-
-
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearCliente') ?>">Crear clientes</a>
-<a class="badge"  href="<?php echo site_url('user/VistaModificarCliente') ?>">Modificar Clientes</a>
-<a class="badge"  href="<?php echo site_url('user/eliminarclientemostar') ?>">Eliminar Clientes</a>
-
-
-
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearProductos') ?>">Crear Producto</a>
-
-<a class="badge"   href="<?php echo site_url('user/AgregarProductos') ?>">agregar Productos</a>
-
-
-
-
-<a class="badge"  href="<?php echo site_url('user/crearEmpleado') ?>">ver Reportes</a>
-
-
-
-
-
-
-
-
-
-       
-        <script src="<?php base_url();?> util/js/login/index.js"></script>
       </body>
     </html>

@@ -43,9 +43,9 @@
 
 
     <div id="container">
-        <h1>CrearUsuario</h1>
+        <h1>Agregra Producto </h1>
         <div id="body">
-            <p> Registro de usuario </p>
+            <p> Agregra Producto </p>
 
         </div>
         <form class="form-inline" action="<?php echo site_url('User/actualizarProductos'); ?>" method="post">
@@ -55,8 +55,10 @@
 
 
             codigo:
-            <input type="number" name="codigo" value="" onkeypress="return soloLetras(event) " required autofocus> cantidad:
-            <input type="number" name="cantidad" value="" onkeypress="return soloLetras(event) " required autofocus>
+            <input type="number" name="codigo" value=""  required autofocus> 
+            cantidad:
+
+            <input type="number" name="cantidad" value="" " required autofocus>
 
 
 
