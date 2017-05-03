@@ -54,7 +54,7 @@
 
 
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" class="form-control"  name="email" placeholder="Usuario" required autofocus>
+      <input type="text" id="inputEmail" class="form-control"  name="email" placeholder="Usuario" required autofocus>
 
 
         <label for="inputPassword" class="sr-only">Password</label>
@@ -68,7 +68,6 @@
       </form>
 
     </div> <!-- /container -->
-
 
 
 

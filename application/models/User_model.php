@@ -29,6 +29,17 @@ function obtenerclientes() {
     return $query->result();
 
   }
+  function  obtenerProducto() {
+
+    
+
+
+      $query = $this->db->get('producto');
+
+    return $query->result();
+
+  }
+
 
 
 

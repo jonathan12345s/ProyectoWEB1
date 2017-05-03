@@ -63,10 +63,49 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
+
+
+
 	}
+
+
+
+
+
 	</style>
+
+
+
+
+
+ <script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>
 </head>
 <body>
+
+
+
+
+
+
 
 <div id="container">
 	<h1>Create User</h1>
@@ -77,9 +116,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <form class=""   action="<?php echo site_url('User/save'); ?>"  method="post">
 
 
-      Nombre: <input type="text" name="Nombre" value="">
+      Nombre: <input type="text" name="Nombre"  value=""onkeypress="return soloLetras(event)">
       
-      contrasena: <input type="text" name="contraseña" value="">
+      contrasena: <input type="text" name="contraseña" >
 
       <br>
 			<LABEL>Tipo Usuario</LABEL>

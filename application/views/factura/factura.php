@@ -10,6 +10,12 @@
  <head>
 
 
+
+
+
+
+
+
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -54,29 +60,28 @@
 
 
       
-        <div id="Administrador">
-          <h1>Bienvenido!</h1>
+        <div id="Empleado">
+      
           
-     <p>Pagina principal de Empleado</p>
+     <h2>Facturacion</h2>
 
 
 
 <form class="form-inline">
   <div class="form-group">
 
-      <label for="email">Email address:</label>
+      <label for="email">Codigo Factura:</label>
 
 
 <?php
 
 $aleatorio=rand(1, 100);
 
-echo "El numero aleatorio es: "."$aleatorio";
 
 
 ?>
 
-    <input type="text " value= '<?php echo $aleatorio; ?>'  class="form-control" id="email">
+    <input type="text " value= '<?php echo $aleatorio; ?>'  class="form-control" name="Codigo">
 
 
 
@@ -85,18 +90,83 @@ echo "El numero aleatorio es: "."$aleatorio";
 
 
   <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd">
+    <label for="pwd">id Cliente:</label>
+    <input type="number" class="form-control" name="Cliente">
   </div>
-  <div class="checkbox">
-    <label><input type="checkbox"> Remember me</label>
+
+
+
+
+
+
+  <div class="form-group">
+    <label for="pwd">Codigo Producto:</label>
+    <input type="number" class="form-control"  name ="CodigoProducto">
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+
+  <div class="form-group">
+    <label for="pwd">cantidad:</label>
+    <input type="number" class="form-control"  name ="cantidad">
+  </div>
+
+
+</div>
+  <button type="submit" class="btn btn-default">Venta</button>
 </form>
+
+
+
+
+
 
 
 
        
         <script src="<?php base_url();?> util/js/login/index.js"></script>
+
+
+
+
+
+  <table border="solid">
+ <thead>
+ <tr>
+ <th>id</th>
+ <th>nombre</th>
+ <th>edad</th>
+ <th>dirrecion</th>
+ <th>telefono</th>
+
+ </tr>
+ </thead>
+ <tbody>
+ <?php foreach ($usuarios as $u):?>
+ 
+ <tr>
+
+
+
+
+ <td><?=$u->id?></td>
+ <td><?=$u->nombre?></td>
+ <td><?=$u->edad?></td>
+ <td><?=$u->dirrecion?></td>
+
+  <td><?=$u->telefono?></td>
+
+ </tr>
+ 
+ <?php endforeach;?>
+ </tbody>
+ </table>
+
+
+
+
+
+
+
+
+
       </body>
     </html>

@@ -13,7 +13,21 @@ class User extends CI_Controller {
 public function VistaFactura(){
 
 
-	$this->load->view("factura/factura.php");
+
+		$usuarios = $this->User_model->obtenerclientes(); 
+ 
+ 				$data1['usuarios'] = $usuarios;
+
+
+
+
+ 				$Productos=$this->User_model->obtenerProducto(); 
+
+
+ 				$data2['productos'] = $Productos;
+
+
+	$this->load->view("factura/factura.php",$data1,$data2);
 }
 
 
@@ -181,14 +195,6 @@ public function ModificarCliente(){
 
 
 $editar = $this->input->post('editar');
-
-
-
-
-
-
-
- 
 
 
 
