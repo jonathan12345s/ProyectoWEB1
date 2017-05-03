@@ -15,6 +15,26 @@ class User extends CI_Controller
 		$this->load->view('user/index.php');
 		}
 
+
+
+
+	public function Reportes()
+		{
+
+
+
+
+		$r = $this->User_model->ObtenerFactura();
+
+
+		$data['datos'] = $r;
+
+
+		$this->load->view('factura/Reportes.php',$data);
+
+
+		}
+
 	public function VistaFactura()
 		{
 		$usuarios = $this->User_model->obtenerclientes();

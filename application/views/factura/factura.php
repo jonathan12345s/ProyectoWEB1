@@ -66,8 +66,7 @@
      <h2>Facturacion</h2>
 
 
-
-<form class="form-inline"   action="guardarFactura"  method="post" >
+<form class="form-inline"  action="<?php echo site_url('User/saveFactura'); ?>"  method="post" >
   <div class="form-group">
 
       <label for="email">Codigo Factura:</label>

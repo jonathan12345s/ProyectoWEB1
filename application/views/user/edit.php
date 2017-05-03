@@ -63,7 +63,7 @@
                     <td>Nombre: </td>
                     <td>
 
-                        <input name="txtnombre" required autofocus value=<?=$u->nombre?>  onkeypress="return soloLetras(event) " type="text"/></td>
+                        <input name="txtnombre" required autofocus value=<?=$u->nombre?>  required pattern="[a-zA-Z]*"  " type="text"/></td>
                 </tr>
                 <tr>
                     <td>Contraseña: </td>

@@ -18,6 +18,40 @@ class User_model extends CI_Model
     ));
     return $query->result();
     }
+ function obtenerclientesid($id)
+    {
+    
+
+
+
+    $this->db->select('nombre');
+    $this->db->from('cliente');
+    $this->db->where('id = ' . $id);
+    $cliente = $this->db->get();
+    return $cliente->result();
+    }
+
+ function obtenerproductosid($codigo)
+    {
+    
+
+
+
+    $this->db->select('nombre','precio');
+    $this->db->from('producto');
+    $this->db->where('codigo = ' . $codigo);
+    $producto = $this->db->get();
+    return $producto->result();
+    }
+
+
+
+
+
+
+
+
+
 
   function obtenerclientes()
     {
@@ -122,4 +156,13 @@ class User_model extends CI_Model
     $r = $this->db->insert('usuario', $user);
     return $r;
     }
+
+
+
+
+
+     function ObtenerFactura() {
+    $query = $this->db->get('factura');
+    return $query->result();
+  }
   }

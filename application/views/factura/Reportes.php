@@ -1,5 +1,3 @@
-<?php if (isset($_SESSION[ 'user'])){ redirect( 'usuario'); } ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -45,66 +43,58 @@
 
 
 
-    <div id="Administrador">
-        <h1 >Bienvenido!</h1>
-
-        <p>Pagina principal de administrador</p>
+    <form name="tabla" action="<?php echo site_url('User/ModificarEmpelado'); ?>" method="POST">
 
 
 
-
-
-        <a class="btn-info" href="crearEmpleado">Crear Empleados</a>
-        <br>
-        <br>
-        <a class="btn-primary" href="ModificarEmpleado">Modificar Empleados</a>
- 
- <br>
- <br>
- 
-
-<a class="btn-info" href="<?php echo site_url('user/eliminarmostar'); ?>">Eliminar Empleado</a>
-
-
-<br>
-<br>
+        <table class="table" border="solid">
+            <thead>
+                <tr>
+               
+                    <th>codigo</th>
+                    <th>idCliente</th>
+                    <th>codigoproducto</th>
+                    <th>cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($datos as $u):?>
 
 
 
 
-        <a class="btn-primary" href="crearcliente">Crear clientes</a>
-        <br>
-        <br>
-   
+            
 
-<a class="btn-info" href="<?php echo site_url('user/VistaModificarCliente'); ?>">Modificar Clientes</a>
-<br><br>
+                <tr>
+                   
+                    <td>
+                        <?=$u->codigo?></td>
+                    <td>
+                        <?=$u->idCliente?></td>
+                    <td>
+                        <?=$u->codigoproducto?></td>
 
+             
 
-        <a class="btn-primary" href="eliminarclientemostar">Eliminar Clientes</a>
+                    <td>
+                        <?=$u->cantidad?></td>
 
-<br><br>
+                </tr>
 
+                <?php endforeach;?>
+            </tbody>
+        </table>
 
+          <br>
 
-        <a class="btn-info" href="crearProductos">Crear Producto</a>
-        <br>
-        <br>
+                <a href="<?=$_SERVER['HTTP_REFERER']?>">Volver </a>
 
-        <a class="btn-primary" href="AgregarProductos">agregar Productos</a>
-        <br>
-        <br>
+                <br>
+        <input type="submit" value="Editar" />
+    </form>
+    </div>
+    </div>
 
-
-
-
-        <a class="btn-primary" href="<?php echo site_url('user/Reportes') ?>">ver Reportes</a>
-
-
-
-
-
-       
 </body>
 
 </html>

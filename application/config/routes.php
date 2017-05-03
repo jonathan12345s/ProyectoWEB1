@@ -54,83 +54,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'user/login';
 $route['usuario'] = 'user/index';
 $route['autenticar'] = 'user/autenticar';
-
-
 $route['eliminarCliente'] = 'User/eliminarCliente';
-
 $route['editarCliente'] = 'User/editarCliente';
-
-
-
 $route['ModificarCliente'] = 'User/ModificarCliente';
-
 $route['guardarFactura'] = 'User/saveFactura';
-
-
 $route['AgregarProductos'] = 'User/actualizarProductos';
-
-
 $route['InsertarProductos'] = 'User/saveProductos';
-
-
-
-
 $route['crearEmpleado'] = 'user/crearEmpleado';
-
 $route['ModificarEmpleado'] = 'user/ModificarEmpleado';
-
 $route['EliminarEmp'] = 'User/eliminarmostar';
-
-
-
-
-
-
 $route['crearcliente'] = 'user/crearCliente';
-
 $route['ModificarCliente'] = 'user/VistaModificarCliente';
-
-
-
-
-
-
 $route['eliminarclientemostar'] = 'user/eliminarclientemostar';
-
-
-
 $route['guardarEmpleado'] = 'User/save';
-
-
-
-
-
-
 $route['crearProductos'] = 'user/crearProductos';
-
 $route['AgregarProductos'] = 'user/AgregarProductos';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $route['guardarcliente'] = 'User/saveCliente';
-
-
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
