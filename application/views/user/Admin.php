@@ -4,7 +4,7 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" type="text/css" href="<?= base_url()?>Pantilla/css/home.css">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -38,6 +38,8 @@
 
 
 </head>
+<style type="text/css">
+</style>
 
 <body>
 
@@ -45,66 +47,120 @@
 
 
 
-    <div id="Administrador">
-        <h1 >Bienvenido!</h1>
+    <div>
+        <h1>Bienvenido!</h1>
 
         <p>Pagina principal de administrador</p>
 
 
 
 
+        <ul class="list-inline intro-social-buttons">
+            <li>
 
-        <a class="btn-info" href="crearEmpleado">Crear Empleados</a>
-        <br>
-        <br>
-        <a class="btn-primary" href="ModificarEmpleado">Modificar Empleados</a>
- 
- <br>
- <br>
- 
+                <a href="crearEmpleado" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Crear Empleados</span>
+                </a>
+            </li>
+            <li>
 
-<a class="btn-info" href="<?php echo site_url('user/eliminarmostar'); ?>">Eliminar Empleado</a>
+                <a href="ModificarEmpleado" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Modificar Empleados</span>
+                </a>
+            </li>
+            <li>
 
-
-<br>
-<br>
-
-
-
-
-        <a class="btn-primary" href="crearcliente">Crear clientes</a>
-        <br>
-        <br>
-   
-
-<a class="btn-info" href="<?php echo site_url('user/VistaModificarCliente'); ?>">Modificar Clientes</a>
-<br><br>
+                <a href="<?php echo site_url('user/eliminarmostar'); ?>" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Eliminar Empleado</span>
+                </a>
+            </li>
+        </ul>
 
 
-        <a class="btn-primary" href="eliminarclientemostar">Eliminar Clientes</a>
-
-<br><br>
-
-
-
-        <a class="btn-info" href="crearProductos">Crear Producto</a>
-        <br>
-        <br>
-
-        <a class="btn-primary" href="AgregarProductos">agregar Productos</a>
-        <br>
         <br>
 
 
 
 
-        <a class="btn-primary" href="<?php echo site_url('user/Reportes') ?>">ver Reportes</a>
+        <br>
+
+        <ul class="list-inline intro-social-buttons">
 
 
-         <a class="badge"  href="<?php echo site_url('user/index') ?>">Salir</a>
+
+            <li>
+
+                <a href="crearcliente" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Crear Cliente</span>
+                </a>
+            </li>
+            <li>
+
+                <a href="<?php echo site_url('user/VistaModificarCliente'); ?>" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Modificar Clientes</span>
+                </a>
+            </li>
+            <li>
+
+                <a href="eliminarclientemostar" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Eliminar Clientes</span>
+                </a>
+            </li>
+        </ul>
 
 
-       
+
+
+        <br>
+        <br>
+        <ul class="list-inline intro-social-buttons">
+
+
+
+            <li>
+
+                <a href="crearProductos" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Crear Producto</span>
+                </a>
+            </li>
+            <li>
+
+                <a href="AgregarProductos" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">agregar Productos</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+        <br>
+        <br>
+
+
+        <ul class="list-inline intro-social-buttons">
+
+
+
+            <li>
+
+                <a href="<?php echo site_url('user/Reportes') ?>" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">ver Reportes</span>
+                </a>
+            </li>
+            <li>
+
+                <a href="<?php echo site_url('user/index') ?>" class="btn btn-default btn-lg">
+                    </i> <span class="network-name">Salir</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+
+
+
 </body>
 
 </html>
